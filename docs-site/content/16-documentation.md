@@ -294,7 +294,7 @@ Brief description of the project, its purpose, and key features.
 
 ### System Components
 
-```ascii
+```text
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
 │   Frontend   │────▶│  API Gateway │────▶│ Auth Service │
 └──────────────┘     └──────────────┘     └──────────────┘
