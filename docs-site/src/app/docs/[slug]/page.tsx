@@ -12,14 +12,12 @@ export async function generateStaticParams() {
   }))
 }
 
-// Define the correct params type
-interface DocPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function DocPage({ params }: DocPageProps) {
+// Page component with simplified parameters
+export default function DocPage({
+  params
+}: {
+  params: { slug: string }
+}) {
   const doc = getDocBySlug(params.slug)
 
   if (!doc) {
@@ -57,7 +55,7 @@ export default async function DocPage({ params }: DocPageProps) {
           </h1>
         </div>
 
-        {/* Main Content Container - Apply manual styles via class */}
+        {/* Main Content using Prose */}
         <article className="manual-markdown-styles space-y-6">
           <MDXRemote
             source={doc.content}
