@@ -12,7 +12,14 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function DocPage({ params }: { params: { slug: string } }) {
+// Define the correct params type
+interface DocPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function DocPage({ params }: DocPageProps) {
   const doc = getDocBySlug(params.slug)
 
   if (!doc) {
