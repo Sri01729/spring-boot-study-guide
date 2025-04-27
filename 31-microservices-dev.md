@@ -411,6 +411,56 @@ class OrderServiceIntegrationTest {
 4. ❌ Insufficient testing
    ✅ Comprehensive testing strategy
 
+# Things to Avoid During Microservices Implementation
+
+## 1. Avoid Overengineering
+- Do not split services too finely without a strong reason.
+- Keep services cohesive and meaningful.
+
+## 2. Avoid Tight Coupling
+- Services should communicate via APIs or messaging, not through direct internals.
+- No direct database sharing between services.
+
+## 3. Avoid Database Sharing
+- Each microservice must have its own separate database.
+- No two services should directly access the same data store.
+
+## 4. Avoid Ignoring Observability
+- Implement centralized logging, metrics, and distributed tracing.
+- Make sure every service can be monitored individually.
+
+## 5. Avoid Poor API Design
+- Always version your APIs.
+- Never introduce breaking changes without careful planning.
+
+## 6. Avoid Synchronous Communication Everywhere
+- Too many synchronous calls cause latency and cascading failures.
+- Prefer asynchronous communication (message queues, event buses).
+
+## 7. Avoid Lack of Fault Tolerance
+- Microservices must be resilient to failures.
+- Use retries, timeouts, circuit breakers, and fallback mechanisms.
+
+## 8. Avoid Monolithic Deployment
+- Deploy services independently, not bundled together.
+- Independent deployment ensures flexibility and scalability.
+
+## 9. Avoid Ignoring Security
+- Protect internal service communication (e.g., mTLS, OAuth2).
+- Always validate incoming requests, even from "trusted" sources.
+
+## 10. Avoid Overlooking Data Consistency
+- Accept that eventual consistency is part of microservices.
+- Use patterns like Sagas or event-driven architecture for distributed transactions.
+
+## 11. Avoid Skipping Automation
+- Automate builds, testing, deployments, and monitoring.
+- Manual processes introduce errors and slow down scaling.
+
+## 12. Avoid Unclear Service Boundaries
+- Clearly define service responsibilities.
+- Avoid duplication or overlap between services.
+
 ## Best Practices
 
 1. Follow DDD principles
