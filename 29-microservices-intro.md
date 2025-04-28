@@ -308,6 +308,28 @@ public class NotificationService {
 7. Implement distributed tracing
 8. Use API gateways
 
+# Real-World Problems Faced in Microservices Architecture
+
+## 1. Service Communication Failures
+- **Problem:** Network failures, timeout errors, or unresponsive downstream services can cause major disruptions.
+- **Example:** A Payment Service depends on the Inventory Service, but if Inventory is slow or down, payments fail or hang indefinitely.
+
+## 2. Data Consistency Issues
+- **Problem:** Since each service has its own database, ensuring data consistency across services (especially during transactions) becomes complex.
+- **Example:** In an e-commerce app, if the Order Service saves the order but the Inventory Service fails to update the stock, the systems are out of sync.
+
+## 3. Distributed System Complexity
+- **Problem:** Debugging, tracing, and managing distributed systems is harder compared to monolithic systems.
+- **Example:** Tracking a user request across multiple services (like authentication, catalog, and checkout) can become a nightmare without proper observability tools.
+
+## 4. Versioning and Backward Compatibility
+- **Problem:** Updating a service without breaking others is tricky. New versions must be backward-compatible or have careful migration strategies.
+- **Example:** If the API contract of the Customer Service changes, all dependent services must adapt, which can cause cascading failures.
+
+## 5. Deployment and Environment Management
+- **Problem:** Managing deployments for multiple services (dev, staging, prod) becomes complex and resource-heavy.
+- **Example:** A simple feature release may require deploying 5–10 interdependent
+
 ## Knowledge Check
 
 - [ ] Understand microservices architecture
